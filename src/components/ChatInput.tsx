@@ -1,8 +1,8 @@
 "use client";
 
+import { type useChat } from "ai/react";
 import { Button, Textarea } from "@nextui-org/react";
 import { Send } from "lucide-react";
-import { type useChat } from "ai/react";
 
 type HandleInputChange = ReturnType<typeof useChat>["handleInputChange"];
 type HandleSubmit = ReturnType<typeof useChat>["handleSubmit"];

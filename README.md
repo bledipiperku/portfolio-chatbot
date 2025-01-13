@@ -1,4 +1,4 @@
-# Portfolio ChatBot
+# Portfolio AI Chatbot
 
 ## Getting Started
 

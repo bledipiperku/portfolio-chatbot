@@ -1,12 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronDown, MessageSquare } from "lucide-react";
+import { Message } from "ai/react";
+
 import { ChatWrapper } from "./ChatWrapper";
 
 interface CircleButtonProps {
   sessionId: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  initialMessages: any[];
+  initialMessages: Message[];
 }
 
 export const CircleButton: React.FC<CircleButtonProps> = ({

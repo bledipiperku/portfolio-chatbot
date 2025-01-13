@@ -41,7 +41,7 @@ export const ChatInput = ({
                   }
                 }}
                 placeholder="Enter your question..."
-                className="resize-none bg-zinc-800 text-white outline-none px-[2px] rounded-xl text-base focus:outline-none focus:ring-0"
+                className="resize-none bg-zinc-800 px-[2px] text-white rounded-xl text-base focus:outline-none focus:ring-0"
               />
 
               <Button

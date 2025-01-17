@@ -52,6 +52,9 @@ export const ChatInput = ({
                 <Send className="size-4" />
               </Button>
             </form>
+            <p className="text-center text-gray-400 text-xs mt-[2px] -mb-3">
+              &copy; Bledi Piperku 2025
+            </p>
           </div>
         </div>
       </div>

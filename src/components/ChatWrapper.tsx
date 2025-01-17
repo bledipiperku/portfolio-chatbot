@@ -1,16 +1,15 @@
-"use client";
-
 import { Message, useChat } from "ai/react";
-
 import { Messages } from "./Messages";
 import { ChatInput } from "./ChatInput";
 
 export const ChatWrapper = ({
   sessionId,
   initialMessages,
+  isEmbedded = false,
 }: {
   sessionId: string;
   initialMessages: Message[];
+  isEmbedded?: boolean;
 }) => {
   const { messages, handleInputChange, handleSubmit, input, setInput } =
     useChat({
@@ -19,8 +18,16 @@ export const ChatWrapper = ({
       initialMessages,
     });
 
+  const baseStyles =
+    "fixed bottom-0 right-0 z-50 bg-zinc-800 shadow-2xl flex flex-col justify-between";
+
+  const containerStyles = isEmbedded
+    ? baseStyles
+    : `${baseStyles} h-full w-full overflow-hidden divide-y divide-zinc-700 gap-2
+       md:bottom-20 md:right-5 md:h-[650px] md:w-[450px] md:rounded-2xl`;
+
   return (
-    <div className="fixed bottom-20 right-5 h-[650px] w-[400px] overflow-hidden bg-zinc-800 rounded-2xl flex divide-y divide-zinc-700 flex-col justify-between gap-2">
+    <div className={containerStyles}>
       <header>
         <h2 className="text-lg font-semibold pt-2 text-center text-white">
           Portfolio AI Chatbot

@@ -8,7 +8,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; img-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; frame-ancestors 'self' https://piperku.com;",
+              "default-src 'self'; img-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; frame-ancestors 'self' https://piperku.com http://localhost:3000;",
           },
           {
             key: "Strict-Transport-Security",

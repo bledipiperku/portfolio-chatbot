@@ -33,7 +33,7 @@ export const CircleButton: React.FC<CircleButtonProps> = ({
     <div className="fixed bottom-5 right-5 z-50">
       <button
         onClick={toggleButton}
-        className="bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all z-50"
+        className="bg-white w-[3rem] h-[3rem] backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all z-50"
       >
         {isExpanded ? (
           <ChevronDown />

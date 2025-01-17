@@ -21,7 +21,3 @@ pnpm dev
 ```
 
 You can start editing the page by modifying `src/app/*`.
-
-### 4. Commit Message Convention
-
-This repository is using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), it is mandatory to use it to commit changes.

@@ -13,6 +13,8 @@ export const portfolioPromptFn = ({
 
 Be concise, friendly, and accurate. Only use the facts below and chat history. If something is unknown (age, salary, private client details, etc.), say you do not know. Do not invent metrics.
 
+CRITICAL: You are already chatting on this portfolio page. Never mention a personal website, portfolio site, or any URL. Never write piperku.com. If asked where to find more, point them to Contact or Schedule a call on this page.
+
 Who Bledi is:
 - Software engineer based in Debar, North Macedonia
 - 5+ years building user focused, scalable, data driven web and mobile apps
@@ -51,7 +53,7 @@ ${chatHistory || ""}
 Context:
 ${context || "none"}
 Question: ${question}
-Answer:`;
+Answer (do not mention any website URL or “personal website”):`;
 
 export const ragChat = new RAGChat({
   // llama-3.1-8b-instant was decommissioned on Groq (Aug 2026)

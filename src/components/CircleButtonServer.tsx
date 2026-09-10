@@ -1,25 +1,16 @@
 import React from "react";
 import { cookies } from "next/headers";
 
-import { redis } from "@/lib/redis";
 import { ragChat } from "@/lib/rag-chat";
 import { CircleButton } from "./CircleButton";
 
 export const CircleButtonServer = async () => {
   const sessionCookie = (await cookies()).get("sessionId")?.value;
-  const fixedUrl = "https://piperku.com";
+  const fixedUrl = "https://www.piperku.com";
   const sessionId = (fixedUrl + "--" + sessionCookie).replace(/\//g, "");
 
-  const isAlreadyIndexed = await redis.sismember("indexed-urls", fixedUrl);
-
-  if (!isAlreadyIndexed) {
-    await ragChat.context.add({
-      type: "html",
-      source: fixedUrl,
-      config: { chunkOverlap: 50, chunkSize: 200 },
-    });
-    await redis.sadd("indexed-urls", fixedUrl);
-  }
+  // Vector indexing is paused while the Upstash Vector endpoint is unavailable.
+  // Chat answers use the portfolio prompt in rag-chat.ts instead.
 
   const initialMessages = await ragChat.history.getMessages({
     amount: 10,

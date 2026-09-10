@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { aiUseChatAdapter } from "@upstash/rag-chat/nextjs";
 
-import { ragChat } from "@/lib/rag-chat";
+import { portfolioPromptFn, ragChat } from "@/lib/rag-chat";
+
+export const runtime = "nodejs";
+export const maxDuration = 60;
 
 export const POST = async (req: NextRequest) => {
   try {
@@ -27,6 +30,8 @@ export const POST = async (req: NextRequest) => {
       sessionId,
       // Upstash Vector index currently 404s; chat still works via prompt + history
       disableRAG: true,
+      // Must pass promptFn here: with disableRAG, library ignores config.promptFn
+      promptFn: portfolioPromptFn,
     });
 
     return aiUseChatAdapter(response);

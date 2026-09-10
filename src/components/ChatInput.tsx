@@ -53,7 +53,7 @@ export const ChatInput = ({
               </Button>
             </form>
             <p className="text-center text-gray-400 text-xs mt-[2px] -mb-3">
-              &copy; Bledi Piperku 2025
+              &copy; Bledi Piperku 2026
             </p>
           </div>
         </div>

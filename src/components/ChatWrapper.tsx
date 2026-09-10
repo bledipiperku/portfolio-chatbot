@@ -1,3 +1,5 @@
+"use client";
+
 import { Message, useChat } from "ai/react";
 import { Messages } from "./Messages";
 import { ChatInput } from "./ChatInput";
@@ -34,7 +36,7 @@ export const ChatWrapper = ({
         </h2>
       </header>
 
-      <div className="flex-1 justify-between flex flex-col overflow-y-auto pb-[128px]">
+      <div className="flex-1 min-h-0 flex flex-col pb-[128px]">
         <Messages messages={messages} />
       </div>
 
